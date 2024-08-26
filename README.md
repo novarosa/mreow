@@ -7,3 +7,6 @@ well as just generally adapting it to a workflow im more
 comfortable/familiar with. After I get through the tutorial the plan is
 to adapt it into a more comprehensive game writing framework and
 eventually game according to a private roadmap at Rosaline Software.
+
+## synopsis
+`$ make && ./mreow`
