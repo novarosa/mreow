@@ -7,5 +7,7 @@ LIB=-L/usr/local/lib -lSDL2
 
 CFLAGS=${INC} ${LIB} -O3 -s
 
-all:
-	cc ${CFLAGS} main.c -o mreow
+all: mreow
+
+mreow: main.c
+	cc ${CFLAGS} $> -o $@
