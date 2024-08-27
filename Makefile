@@ -10,5 +10,5 @@ CFLAGS=${INC} ${LIB} -O3 -s
 
 all: mreow
 
-mreow: main.c
+mreow: src/*.c
 	cc ${CFLAGS} $> -o $@
