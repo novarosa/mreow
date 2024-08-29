@@ -12,3 +12,6 @@ all: mreow
 
 mreow: src/*.c
 	cc ${CFLAGS} $> -o $@
+
+clean:
+	rm mreow
