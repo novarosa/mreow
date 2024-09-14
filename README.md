@@ -14,9 +14,8 @@ eventually game according to a private roadmap at Rosaline Software.
 - cc
 
 *Nota bene*: I try to make this code work portably in any environment,
-but testing is done on FreeBSD with clang and FreeBSD make for the time
-being. I also plan to start testing this on macOS as well with gmake and
-clang.
+but testing is done on FreeBSD with clang and bmake for the time being.
+I also plan to start testing this on macOS as well with gmake and clang.
 
 ## synopsis
 `$ make && ./mreow`
