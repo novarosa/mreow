@@ -8,10 +8,12 @@ LIB=-L/usr/local/lib -lSDL2
 
 CFLAGS=${INC} ${LIB} -O3 -s
 
+SRC=src/*.c
+
 all: mreow
 
-mreow: src/*.c
-	cc ${CFLAGS} $> -o $@
+mreow: ${SRC}
+	cc ${CFLAGS} ${SRC} -o $@
 
 clean:
 	rm mreow
