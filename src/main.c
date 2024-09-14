@@ -75,8 +75,19 @@ int main() {
         return 1;
     }
 
-    // TwinkleBearDev describes this loop as "sleepy" 😭
-    for(int i = 0; i < 3; i++) {
+    int quit = 0;
+    while(!quit) {
+        SDL_Event e;
+        while(SDL_PollEvent(&e)) {
+            switch(e.type) {
+                case SDL_QUIT:
+                case SDL_KEYDOWN:
+                case SDL_MOUSEBUTTONDOWN:
+                    quit = 1;
+                    break;
+            }
+        }
+
         if(SDL_RenderClear(r))
             error("Error clearing the rendering context");
 
@@ -99,7 +110,6 @@ int main() {
         ren(a, r, x, y);
 
         SDL_RenderPresent(r);
-        SDL_Delay(1000);
     }
 
     SDL_DestroyTexture(b);
