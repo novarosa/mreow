@@ -9,7 +9,7 @@ to adapt it into a more comprehensive game writing framework and
 eventually game according to a private roadmap at Rosaline Software.
 
 ## dependencies
-- libSDL
+- libSDL2
 - make
 - cc
 
