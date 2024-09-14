@@ -10,6 +10,7 @@ eventually game according to a private roadmap at Rosaline Software.
 
 ## dependencies
 - libSDL2
+- SDL2_image
 - make
 - cc
 

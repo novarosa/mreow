@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 // TODO idk maybe figure out a better default than 1200x1200
 #define INIT_WIDTH 1200
@@ -8,20 +9,6 @@
 
 void error(char *msg) {
     fprintf(stderr, "%s: %s\n", msg, SDL_GetError());
-}
-
-SDL_Texture* load(char *path, SDL_Renderer *r) {
-    SDL_Texture *t;
-    SDL_Surface *s = SDL_LoadBMP(path);
-    if(s) {
-        t = SDL_CreateTextureFromSurface(r, s);
-        SDL_FreeSurface(s);
-        if(!t)
-            error("Error creating texture from image");
-    } else
-        error("Error loading image");
-
-    return t;
 }
 
 int ren(SDL_Texture *t, SDL_Renderer *r, int x, int y) {
@@ -69,16 +56,18 @@ int main() {
         return 1;
     }
 
-    SDL_Texture *a = load("res/jacey.bmp", r);
+    SDL_Texture *a = IMG_LoadTexture(r, "res/jacey.png");
     if(!a) {
+        error("Error loading image");
         SDL_DestroyRenderer(r);
         SDL_DestroyWindow(w);
         SDL_Quit();
         return 1;
     }
 
-    SDL_Texture *b = load("res/nova.bmp", r);
+    SDL_Texture *b = IMG_LoadTexture(r, "res/nova.png");
     if(!b) {
+        error("Error loading image");
         SDL_DestroyTexture(a);
         SDL_DestroyRenderer(r);
         SDL_DestroyWindow(w);
